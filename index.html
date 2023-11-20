@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>รายรับ รายจ่าย</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            รายรับ - รายจ่าย
+        </header>
+        <div class="box-info">
+            <h4>เงินที่ได้จากแม่</h4>
+            <input type="text" id="formmum">
+            <h4>ค่าเดินทาง</h4>
+            <input type="text" id="transport">
+            <h4>ค่าอาหาร</h4>
+            <input type="text" id="foodval">
+            <h4>ค่าอื่นๆ</h4>
+            <input type="text" id="otherpadid">
+            <h4>คงเหลือ</h4>
+            <input type="text" class="bigger" id="totall">
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('input', updateTotal);
+
+        function updateTotal() {
+            const mom = parseFloat(document.getElementById('formmum').value) || 0;
+            const transport = parseFloat(document.getElementById('transport').value) || 0;
+            const foodval = parseFloat(document.getElementById('foodval').value) || 0;
+            const otherpadid = parseFloat(document.getElementById('otherpadid').value) || 0;
+
+            const total = mom - transport - foodval - otherpadid;
+            document.getElementById('totall').value = total + "B";
+        }
+    </script>
+</body>
+</html>
