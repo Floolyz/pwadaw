@@ -4,6 +4,8 @@
 }
 .container { 
     text-align: center;
+    margin:40px;
+    max-width: 90%;
 }
 .box-info { 
     display: flex;
